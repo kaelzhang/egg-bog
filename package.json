@@ -1,23 +1,29 @@
 {
   "name": "egg-bog",
   "version": "1.0.0",
-  "description": "egg-bog",
-  "main": "src/index.js",
+  "description": "Egg plugin for bog logger",
   "scripts": {
-    "test": "nyc ava --timeout=10s",
+    "test": "NODE_DEBUG=egg-bog nyc ava --timeout=10s",
     "test-no-report": "NODE_DEBUG=egg-bog nyc ava --timeout=10s --verbose",
     "lint": "eslint .",
     "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "files": [
-    "src/"
+    "app.js",
+    "create.js"
   ],
+  "eggPlugin": {
+    "name": "bog"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/kaelzhang/egg-bog.git"
   },
   "keywords": [
-    "egg-bog"
+    "egg-bog",
+    "egg",
+    "egg-plugin",
+    "eggPlugin"
   ],
   "engines": {
     "node": ">= 6"
@@ -37,5 +43,9 @@
     "eslint-config-ostai": "^1.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint": "^5.14.0"
+  },
+  "dependencies": {
+    "bog": "^1.0.2",
+    "ip": "^1.1.5"
   }
 }

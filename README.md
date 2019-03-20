@@ -15,20 +15,47 @@
 
 # egg-bog
 
-<!-- description -->
+Egg plugin for [bog](https://www.npmjs.com/package/bog) logger
 
 ## Install
 
-```sh
+```bash
 $ npm i egg-bog
 ```
 
 ## Usage
 
 ```js
-import egg_bog from 'egg-bog'
+// {app_root}/config/plugin.js
+exports.bog = {
+  enable: true,
+  package: 'egg-bog',
+}
 ```
 
-## License
+## config `Object`
 
-MIT
+```js
+// {app_root}/config/config.default.js
+exports.bog = config
+```
+
+- **level** `BogLevel='info'` the log level. Defaults to `'info'`
+- **includeTimeDesignator** `boolean=false` `bog.config().includeTimeDesignator`
+- **includeTimeZone** `boolean=false` `bog.config().includeTimeZone`
+- **on** `{[BogLevel]: Function}` event handler for a certain log level
+- **redirect** `{[BogLevel]: Function}` override the default logger for a certain level
+
+```js
+exports.bog = {
+  on: {
+    // It will be triggered when `bog.error(...args)`
+    error (datetime, level, args) {
+      sendToSentry(datetime, level, args)
+    }
+  }
+}
+```
+
+see [config/config.default.js](config/config.default.js) for more detail.
+
