@@ -57,5 +57,7 @@ exports.bog = {
 }
 ```
 
-see [config/config.default.js](config/config.default.js) for more detail.
+## LICENSE
+
+[MIT](LICENSE)
 

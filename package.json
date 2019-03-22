@@ -1,6 +1,6 @@
 {
   "name": "egg-bog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Egg plugin for bog logger",
   "scripts": {
     "test": "NODE_DEBUG=egg-bog nyc ava --timeout=10s",
