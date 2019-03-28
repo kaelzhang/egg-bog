@@ -1,5 +1,4 @@
 const bog = require('bog')
-const ip = require('ip')
 
 const AVAILABLE_LEVELS = [
   'debug',

@@ -1,6 +1,6 @@
 {
   "name": "egg-bog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Egg plugin for bog logger",
   "scripts": {
     "test": "NODE_DEBUG=egg-bog nyc ava --timeout=10s",
@@ -45,7 +45,6 @@
     "eslint": "^5.14.0"
   },
   "dependencies": {
-    "bog": "^1.0.2",
-    "ip": "^1.1.5"
+    "bog": "^1.0.2"
   }
 }
